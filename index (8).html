@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Positioning Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- position: sticky -->
+  <nav class="navbar" aria-label="Main">
+    <a class="brand" href="#top">TrailBook</a>
+    <ul class="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#hikes">Hikes</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>Find your next trail</h1>
+    <p>Scroll down: the navigation bar stays at the top, and the help button stays in the corner.</p>
+  </header>
+
+  <main>
+    <section id="hikes" class="panel">
+      <h2>Featured hikes</h2>
+      <div class="card-row">
+        <!-- relative parent + absolute badge -->
+        <article class="card">
+          <span class="badge badge-new">New</span>
+          <h3>Misty Ridge</h3>
+          <p>6 km loop with forest views and a short climb at the end.</p>
+        </article>
+        <article class="card">
+          <span class="badge badge-hot">Popular</span>
+          <h3>Lake Circuit</h3>
+          <p>Flat 9 km path around the lake, good for beginners and families.</p>
+        </article>
+        <article class="card">
+          <span class="badge badge-new">New</span>
+          <h3>Summit Point</h3>
+          <p>12 km trail to the highest viewpoint in the area. Start early.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gear" class="panel panel-alt">
+      <h2>Gear checklist</h2>
+      <p>Water, snacks, a light jacket, sturdy shoes, a map and a charged phone.</p>
+      <p>Pack for changing weather even on short walks. Layers are easier to manage than one heavy coat.</p>
+      <p>Tell someone your route and expected return time before you leave.</p>
+    </section>
+
+    <section id="about" class="panel">
+      <h2>About</h2>
+      <p>TrailBook is a small practice site for learning CSS positioning. The content is placeholder text.</p>
+      <p>Keep scrolling and notice that the nav and help button never move.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Assignment 6.4 - Positioning Practice</p>
+  </footer>
+
+  <!-- position: fixed -->
+  <a class="help-btn" href="#top" aria-label="Help and contact">?</a>
+</body>
+</html>

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1e2430;
+  background: #f4f6f1;
+}
+
+/* ---------- Sticky navigation ---------- */
+.navbar {
+  position: sticky;      /* scrolls normally until it reaches top: 0, then sticks */
+  top: 0;
+  z-index: 100;          /* above cards and badges while scrolling */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #1f4d3a;
+}
+
+.brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 12px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.nav-links a:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ---------- Hero and sections ---------- */
+.hero {
+  padding: 64px 24px;
+  text-align: center;
+  background: #cfe5d6;
+}
+
+.hero h1 { margin-bottom: 8px; }
+
+.panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  min-height: 70vh;              /* forces the page to be tall enough to scroll */
+}
+
+.panel-alt {
+  max-width: none;
+  background: #ffffff;
+}
+
+.panel-alt > * {
+  max-width: 912px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 { margin-bottom: 16px; }
+p  { margin-bottom: 12px; }
+
+/* Anchor links should not hide under the sticky bar */
+section { scroll-margin-top: 64px; }
+
+/* ---------- Cards with absolutely positioned badges ---------- */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  position: relative;            /* makes the card the reference box for the badge */
+  padding: 32px 16px 16px;
+  background: #ffffff;
+  border: 1px solid #c9d4cc;
+  border-radius: 10px;
+}
+
+.card h3 { margin-bottom: 6px; }
+
+.badge {
+  position: absolute;            /* positioned relative to .card, not the page */
+  top: -10px;
+  right: 12px;
+  z-index: 1;                    /* sits on top of the card border */
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  color: #ffffff;
+}
+
+.badge-new { background: #2f6fb3; }
+.badge-hot { background: #c0392b; }
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 24px;
+  text-align: center;
+  background: #1f4d3a;
+  color: #ffffff;
+}
+
+.footer p { margin: 0; }
+
+/* ---------- Floating help button ---------- */
+.help-btn {
+  position: fixed;               /* stays in the viewport while the page scrolls */
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;                  /* above the navbar (100) and the badges (1) */
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #e07b00;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.help-btn:hover { background: #bf6700; }
+.help-btn:focus-visible,
+.nav-links a:focus-visible { outline: 3px solid #ffd27a; outline-offset: 2px; }
